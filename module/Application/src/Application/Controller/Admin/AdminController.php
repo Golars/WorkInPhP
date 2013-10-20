@@ -7,16 +7,15 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application\Controller;
+namespace Application\Controller\Admin;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
-class IndexController extends AbstractActionController
+class AdminController extends AbstractActionController
 {
     public function indexAction()
-    { 
-        die(var_dump(class_exists('\Application\Controller\Admin\AdminController()')));
+    {
         return new ViewModel();
     }
 }

@@ -1,4 +1,7 @@
 <?php
+
+namespace Application;
+
 /**
  * Zend Framework (http://framework.zend.com/)
  *
@@ -6,7 +9,6 @@
  * @copyright Copyright (c) 2005-2013 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
-
 return array(
     'router' => array(
         'routes' => array(
@@ -31,6 +33,12 @@ return array(
                     'defaults' => array(
                         '__NAMESPACE__' => 'Application\Controller',
                         'controller'    => 'Index',
+                        'action'        => 'index',
+                    ),
+                    'route'    => '/admin',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'Application\Controller\Admin',
+                        'controller'    => 'Admin',
                         'action'        => 'index',
                     ),
                 ),
@@ -62,7 +70,7 @@ return array(
         ),
     ),
     'translator' => array(
-        'locale' => 'en_US',
+        'locale' => 'ru_RU',
         'translation_file_patterns' => array(
             array(
                 'type'     => 'gettext',
@@ -73,7 +81,7 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
         ),
     ),
     'view_manager' => array(
